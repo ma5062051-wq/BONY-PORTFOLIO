@@ -170,7 +170,7 @@ function initCategoryCards() {
 
     // Click navigation
     card.addEventListener('click', () => {
-      if (href.includes('digital-art.html') || href.includes('social-ads.html')) {
+      if (href.includes('digital-art.html') || href.includes('social-ads.html') || href.includes('ai-visualizing.html')) {
         window.location.href = href;
         return;
       }
