@@ -170,12 +170,13 @@ function initCategoryCards() {
 
     // Click navigation
     card.addEventListener('click', () => {
-      if (href.includes('digital-art.html') || href.includes('social-ads.html') || href.includes('ai-visualizing.html')) {
+      if (href.includes('digital-art.html') || href.includes('social-ads.html') || href.includes('ai-visualizing.html') || href.includes('graphic-design-branding.html') || href.includes('3d-ads-motions.html') || href.includes('content-creation.html')) {
         window.location.href = href;
         return;
       }
       // Other pages don't exist yet — show a friendly notice
-      showComingSoonToast(card.querySelector('.cat-title')?.textContent?.trim() || 'This category');
+      const rawTitle = card.dataset.title || card.querySelector('.cat-title')?.innerText?.replace(/\n/g, ' ') || card.querySelector('.cat-title')?.textContent?.replace(/\s+/g, ' ').trim() || 'This category';
+      showComingSoonToast(rawTitle);
     });
 
     // Keyboard navigation (Enter / Space)
